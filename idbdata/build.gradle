@@ -41,6 +41,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
 
     implementation "org.koin:koin-core:$koin_version"
+    implementation 'org.chromium.net:cronet-api:95.4638.50'
     testImplementation "org.koin:koin-test:$koin_version"
     implementation "org.koin:koin-androidx-scope:$koin_version"
     implementation "org.koin:koin-androidx-viewmodel:$koin_version"
