@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.NavHostFragment
 import com.gmail.eamosse.idbdata.data.Category
 import com.gmail.eamosse.imdb.databinding.FragmentHomeBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -34,13 +35,17 @@ class HomeFragment : Fragment() {
                 getCategories()
             })
 
-            categories.observe(viewLifecycleOwner, Observer {
-                binding.categoryList.adapter = CategoryAdapter(it)
-            })
+            categories.observe(viewLifecycleOwner, Observer { it ->
+                binding.categoryList.adapter = CategoryAdapter(it, CategoryAdapter.OnPagesListener{
+                    val action = HomeFragmentDirections
+                        .actionHomeFragmentToHomeSecondFragment("From HomeFragment")
+                    NavHostFragment.findNavController(this@HomeFragment)
+                        .navigate(action)
+                })
 
             error.observe(viewLifecycleOwner, Observer {
                 //afficher l'erreur
             })
-        }
+        })
     }
-}
+}}
