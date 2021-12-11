@@ -16,6 +16,19 @@ import com.gmail.eamosse.idbdata.utils.safeCall
  */
 internal class OnlineDataSource(private val service: MovieService) {
 
+    /**
+     * Récupérer le token du serveur
+     * @return [Result<Token>]
+     * Si [Result.Succes], tout s'est bien passé
+     * Sinon, une erreur est survenue
+     */
+    suspend fun getToken(): Result<TokenResponse> {
+        return safeCall {
+            val response = service.getToken()
+            response.parse()
+        }
+    }
+
     suspend fun getCategories(): Result<List<CategoryResponse.Genre>> {
         return try {
             val response = service.getCategories()
@@ -36,17 +49,6 @@ internal class OnlineDataSource(private val service: MovieService) {
             )
         }
     }
-    /**
-     * Récupérer le token du serveur
-     * @return [Result<Token>]
-     * Si [Result.Succes], tout s'est bien passé
-     * Sinon, une erreur est survenue
-     */
-    suspend fun getToken(): Result<TokenResponse> {
-        return safeCall {
-            val response = service.getToken()
-            response.parse()
-        }
-    }
+
 }
 

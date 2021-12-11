@@ -29,7 +29,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textColor="@android:color/white"
+            android:textColor="#EEEBF6"
             android:textSize="20sp"
             android:text="@{item.name}"
             app:layout_constraintBottom_toBottomOf="@id/category_img"

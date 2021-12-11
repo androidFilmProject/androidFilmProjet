@@ -8,6 +8,7 @@ import com.gmail.eamosse.imdb.databinding.CategoryListItemBinding
 import java.util.*
 
 
+
 class CategoryAdapter(private val items: List<Category>) :
     RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
