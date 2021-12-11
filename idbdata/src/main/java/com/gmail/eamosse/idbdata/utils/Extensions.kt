@@ -52,4 +52,4 @@ internal suspend fun <T : Any> safeCall(execute: suspend () -> Result<T>): Resul
 
 
 class NoDataException: Exception()
-    class NetworkException: Exception()
+class NetworkException: Exception()
