@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/mbds/Desktop/CoursMbds/androidFilmProjet/app/src/main/res/layout/activity_main.xml" value="0.21693840579710144" />
         <entry key="..\:/Users/mbds/Desktop/CoursMbds/androidFilmProjet/app/src/main/res/layout/category_list_item.xml" value="0.1" />
+        <entry key="..\:/Users/mbds/Desktop/CoursMbds/androidFilmProjet/app/src/main/res/layout/fragment_dashboard.xml" value="0.21693840579710144" />
         <entry key="..\:/Users/mbds/Desktop/CoursMbds/androidFilmProjet/app/src/main/res/layout/fragment_home.xml" value="0.15806159420289856" />
+        <entry key="..\:/Users/mbds/Desktop/CoursMbds/androidFilmProjet/app/src/main/res/layout/fragment_notifications.xml" value="0.1" />
       </map>
     </option>
   </component>

@@ -3,6 +3,7 @@ package com.gmail.eamosse.imdb
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.collection.arraySetOf
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -12,6 +13,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
+
 
 /**
  * Activité principale de l'application
@@ -39,11 +41,9 @@ class MainActivity : AppCompatActivity() {
         //Navigation controlleur, utilisée pour géter la navigation (ex. affichage de fragment)
         val navController = findNavController(R.id.nav_host_fragment)
         //Charger les éléments principaux de la bottom bar
-        val appBarConfiguration = AppBarConfiguration(
-                setOf(
-                        R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
-                )
-        )
+        val appBarConfiguration = AppBarConfiguration(arraySetOf(R.id.navigation_home,
+            R.id.navigation_dashboard,
+            R.id.navigation_notifications))
         //Indiquer les éléments principaux de la bottom bar
         setupActionBarWithNavController(navController, appBarConfiguration)
         //Finalement, on lie la bottom bar et la nav controller

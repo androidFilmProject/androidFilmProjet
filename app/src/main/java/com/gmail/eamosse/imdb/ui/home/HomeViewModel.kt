@@ -26,6 +26,19 @@ class HomeViewModel(private val repository: MovieRepository) : ViewModel() {
     val categories: LiveData<List<Category>>
         get() = _categories
 
+    init {
+        viewModelScope.launch(Dispatchers.IO) {
+            when (val result = repository.getToken()) {
+                is Result.Succes -> {
+                    _token.postValue(result.data)
+                }
+                is Result.Error -> {
+                    _error.postValue(result.message)
+                }
+            }
+        }
+    }
+
     fun getCategories() {
         viewModelScope.launch(Dispatchers.IO) {
             when (val result = repository.getCategories()) {
@@ -39,16 +52,8 @@ class HomeViewModel(private val repository: MovieRepository) : ViewModel() {
         }
     }
 
-    init {
-        viewModelScope.launch(Dispatchers.IO) {
-            when (val result = repository.getToken()) {
-                is Result.Succes -> {
-                    _token.postValue(result.data)
-                }
-                is Result.Error -> {
-                    _error.postValue(result.message)
-                }
-            }
-        }
-    }
+
 }
+
+
+

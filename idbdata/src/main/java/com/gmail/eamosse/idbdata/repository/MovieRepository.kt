@@ -1,5 +1,6 @@
 package com.gmail.eamosse.idbdata.repository
 
+import com.gmail.eamosse.idbdata.api.response.toCategory
 import com.gmail.eamosse.idbdata.api.response.toEntity
 import com.gmail.eamosse.idbdata.api.response.toToken
 import com.gmail.eamosse.idbdata.data.Category

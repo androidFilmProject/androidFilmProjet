@@ -1,11 +1,14 @@
 package com.gmail.eamosse.idbdata.utils
 
+import androidx.lifecycle.MutableLiveData
+import com.gmail.eamosse.idbdata.data.Category
 import org.chromium.net.NetworkException
 import retrofit2.Response
 import java.io.IOException
+import java.util.List
 
 
-    internal fun <T : Any> Response<T>.parse(): Result<T> {
+internal fun <T : Any> Response<T>.parse(): Result<T> {
         return if (isSuccessful) {
             body()?.let {
                 Result.Succes(it)
@@ -25,7 +28,7 @@ import java.io.IOException
         }
     }
 
-    internal suspend fun <T : Any> safeCall(execute: suspend () -> Result<T>): Result<T> {
+internal suspend fun <T : Any> safeCall(execute: suspend () -> Result<T>): Result<T> {
         return try {
             execute()
         } catch (e: Exception) {
@@ -45,5 +48,8 @@ import java.io.IOException
         }
     }
 
-    class NoDataException: Exception()
+
+
+
+class NoDataException: Exception()
     class NetworkException: Exception()
