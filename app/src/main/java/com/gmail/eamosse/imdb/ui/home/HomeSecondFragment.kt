@@ -31,13 +31,13 @@ class HomeSecondFragment  : Fragment() {
 
         with(homeViewModel) {
             token.observe(viewLifecycleOwner, Observer {
-                //récupérer les catégories
+                //récupérer les lists de films
                 getMoviesLists(args.myArg.toInt())
             })
 
             movieslists.observe(viewLifecycleOwner, Observer {
                 binding.moviesList.adapter = MoviesListAdapter(it,MoviesListAdapter.OnPagesListener2{
-                    val action = HomeSecondFragmentDirections.actionHomeSecondFragmentToHomeThirdFragment("s")
+                    val action = HomeSecondFragmentDirections.actionHomeSecondFragmentToHomeThirdFragment(it.id.toString())
                     NavHostFragment.findNavController(this@HomeSecondFragment)
                         .navigate(action)
                 })
