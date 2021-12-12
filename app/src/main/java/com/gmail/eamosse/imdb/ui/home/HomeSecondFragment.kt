@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.navArgs
 import com.gmail.eamosse.imdb.databinding.FragmentHomeSecondBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -35,7 +36,11 @@ class HomeSecondFragment  : Fragment() {
             })
 
             movieslists.observe(viewLifecycleOwner, Observer {
-                binding.moviesList.adapter = MoviesListAdapter(it)
+                binding.moviesList.adapter = MoviesListAdapter(it,MoviesListAdapter.OnPagesListener2{
+                    val action = HomeSecondFragmentDirections.actionHomeSecondFragmentToHomeThirdFragment("s")
+                    NavHostFragment.findNavController(this@HomeSecondFragment)
+                        .navigate(action)
+                })
             })
 
             error.observe(viewLifecycleOwner, Observer {
