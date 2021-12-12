@@ -6,12 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.navArgs
 import com.gmail.eamosse.imdb.databinding.FragmentHomeSecondBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
-class HomeSecondFragment : Fragment() {
-
+class HomeSecondFragment  : Fragment() {
+    val args by navArgs<HomeSecondFragmentArgs>()
     private lateinit var binding: FragmentHomeSecondBinding
     private val homeViewModel: HomeViewModel by viewModel()
 
@@ -30,7 +31,7 @@ class HomeSecondFragment : Fragment() {
         with(homeViewModel) {
             token.observe(viewLifecycleOwner, Observer {
                 //récupérer les catégories
-                getMoviesLists(18)
+                getMoviesLists(args.myArg.toInt())
             })
 
             movieslists.observe(viewLifecycleOwner, Observer {

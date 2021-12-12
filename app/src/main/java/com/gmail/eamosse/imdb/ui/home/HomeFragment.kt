@@ -38,7 +38,7 @@ class HomeFragment : Fragment() {
             categories.observe(viewLifecycleOwner, Observer { it ->
                 binding.categoryList.adapter = CategoryAdapter(it, CategoryAdapter.OnPagesListener{
                     val action = HomeFragmentDirections
-                        .actionHomeFragmentToHomeSecondFragment("From HomeFragment")
+                        .actionHomeFragmentToHomeSecondFragment(it.id.toString())
                     NavHostFragment.findNavController(this@HomeFragment)
                         .navigate(action)
                 })
