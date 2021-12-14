@@ -42,7 +42,6 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment)
         //Charger les éléments principaux de la bottom bar
         val appBarConfiguration = AppBarConfiguration(arraySetOf(R.id.navigation_home,
-            R.id.navigation_dashboard,
             R.id.navigation_notifications))
         //Indiquer les éléments principaux de la bottom bar
         setupActionBarWithNavController(navController, appBarConfiguration)

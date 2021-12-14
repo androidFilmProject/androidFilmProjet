@@ -1,15 +1,13 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="next">Next</string>
-    <string name="previous">Previous</string>
     <string name="hello_home_second">Hello HomeSecondFragment. Arg: %1$s</string>
     <string name="hello_home_third">Hello HomeThirdFragment. Arg: %1$s</string>
     <string name="hello_dashboard_second">Hello DashboardSecondFragment. Arg: %1$s</string>
     <string name="hello_notifications_second">Hello NotificationsSecondFragment. Arg: %1$s</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">catégories de film</string>
+    <string name="title_notifications">A propos </string>
 
-    <string name="home_second">Home Second</string>
-    <string name="home_third">Home Third</string>
+    <string name="home_second">Film </string>
+    <string name="home_third">Detail du Film</string>
 </resources>
