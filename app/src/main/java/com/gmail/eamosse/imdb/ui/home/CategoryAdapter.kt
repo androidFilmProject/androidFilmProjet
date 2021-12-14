@@ -31,5 +31,6 @@ class CategoryAdapter(private val items: List<Category> ,private val secondPage:
             secondPage.onClick(items[position])
         }
         holder.bind(items[position])
+
     }
 }

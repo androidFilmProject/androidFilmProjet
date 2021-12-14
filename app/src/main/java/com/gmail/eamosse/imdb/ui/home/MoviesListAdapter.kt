@@ -3,8 +3,11 @@ package com.gmail.eamosse.imdb.ui.home
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.gmail.eamosse.idbdata.data.Category
 import com.gmail.eamosse.idbdata.data.MoviesList
+import com.gmail.eamosse.imdb.R
 import com.gmail.eamosse.imdb.databinding.MoviesListItemBinding
 
 class MoviesListAdapter(private val items: List<MoviesList>,private val thirdPage: OnPagesListener2) :
@@ -15,7 +18,11 @@ class MoviesListAdapter(private val items: List<MoviesList>,private val thirdPag
     inner class ViewHolder(private val binding: MoviesListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: MoviesList) {
+            val context = binding.moviesListImg
             binding.item = item
+            Glide.with(context)
+                .load(item.poster_path)
+                .into(context)
         }
     }
 
@@ -31,5 +38,6 @@ class MoviesListAdapter(private val items: List<MoviesList>,private val thirdPag
             thirdPage.onClick(items[position])
         }
         holder.bind(items[position])
+
     }
 }

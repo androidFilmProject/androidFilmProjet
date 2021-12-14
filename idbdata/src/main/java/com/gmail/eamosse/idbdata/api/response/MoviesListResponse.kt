@@ -1,38 +1,37 @@
 package com.gmail.eamosse.idbdata.api.response
 
-import com.gmail.eamosse.idbdata.data.Category
+
 import com.gmail.eamosse.idbdata.data.MoviesList
-import com.gmail.eamosse.idbdata.data.Token
-import com.gmail.eamosse.idbdata.local.entities.TokenEntity
 import com.google.gson.annotations.SerializedName
 
-internal data class MoviesListResponse(
-    @SerializedName("id")
-    val id: Int,
+data class FilmResponse(
     @SerializedName("results")
-    val results: List<Results>
-) {
-    data class Results(
-        @SerializedName("id")
-        val id: Int,
-        @SerializedName("name")
-        val name: String,
-        @SerializedName("description")
-        val description: String,
-        @SerializedName("iso_639_1")
-        val iso_639_1: String,
-        @SerializedName("poster_path")
-        val poster_path: String
+    val films: List<Movies>
+)
+{
+    data class Movies(
 
+        @SerializedName("id")
+        val id: String,
+
+        @SerializedName("original_title")
+        val name: String,
+
+        @SerializedName("overview")
+        val description: String,
+
+        @SerializedName("poster_path")
+        val poster_path: String,
+
+        @SerializedName("vote_average")
+        val vote_average: Float
     )
 }
 
-
-/**
- * Une classe d'extension utilisée pour convertir la réponse en objet exploitable
- * par les autres composants de l'application
- */
-internal fun MoviesListResponse.Results.toMovies() = MoviesList(
-    id = id!!,
-    name = name!!,
+internal fun FilmResponse.Movies.toMovies() = MoviesList(
+    id = id,
+    name = name ,
+    description = description,
+    poster_path =  "https://image.tmdb.org/t/p/original" + poster_path,
+    vote_average = vote_average
 )

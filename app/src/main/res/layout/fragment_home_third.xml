@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:app2="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto%22%3E">
     <data>
@@ -12,81 +13,35 @@
         android:layout_height="match_parent"
         tools:context=".ui.home.HomeThirdFragment">
 
-<TextView
-android:id="@+id/movie_name"
-android:layout_width="0dp"
-android:layout_height="wrap_content"
-android:gravity="center"
-android:text="Name: @{item.name}"
-android:textColor="@android:color/black"
-android:textSize="20sp"
-app:layout_constraintEnd_toEndOf="parent"
-app:layout_constraintHorizontal_bias="0.0"
-app:layout_constraintStart_toStartOf="parent"
-app:layout_constraintTop_toTopOf="parent"
-tools:text="films" />
+        <TextView
+            app2:layout_constraintEnd_toEndOf="parent"
+            app2:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/movie_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name :@{item.name}"
+            tools:ignore="MissingConstraints"
+            android:layout_marginTop="10dp"/>
 
-<androidx.appcompat.widget.AppCompatImageView
-android:id="@+id/imageView"
-android:layout_width="0dp"
-android:layout_height="200dp"
-android:scaleType="centerInside"
-app:layout_constraintEnd_toEndOf="parent"
-app:layout_constraintStart_toStartOf="parent"
-app:layout_constraintTop_toTopOf="parent"
-tools:srcCompat="@tools:sample/backgrounds/scenic" />
-<TextView
-android:id="@+id/movie_description"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:layout_marginTop="16dp"
-android:text="Description :@{item.description}"
-app:layout_constraintEnd_toEndOf="parent"
-app:layout_constraintStart_toStartOf="parent"
-app:layout_constraintTop_toBottomOf="@+id/movie_name"
-tools:text="Description" />
+        <TextView
+            android:id="@+id/movie_name"
+            app:layout_constraintTop_toBottomOf="@+id/movie_description"
+            tools:ignore="MissingConstraints"
+            tools:text="Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"/>
 
-<TextView
-android:id="@+id/movie_status"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:layout_marginTop="16dp"
-android:text="Status :@{item.status}"
-app:layout_constraintEnd_toEndOf="parent"
-app:layout_constraintStart_toStartOf="parent"
-app:layout_constraintTop_toBottomOf="@+id/movie_description"
-tools:text="Description" />
+        <ImageView
+            android:id="@+id/movie_poster_path"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintTop_toBottomOf="@+id/movie_name"
+            tools:ignore="MissingConstraints"
+            android:layout_marginTop="10dp"
+            />
 
-<TextView
-android:id="@+id/textView2"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:layout_marginTop="16dp"
-android:text="Language : @{item.language}"
-app:layout_constraintEnd_toEndOf="parent"
-app:layout_constraintStart_toStartOf="parent"
-app:layout_constraintTop_toBottomOf="@+id/movie_status"
-tools:text="Description" />
-
-<TextView
-android:id="@+id/movie_popularity"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:layout_marginTop="16dp"
-android:text="Popularity : @{item.popularity}"
-app:layout_constraintEnd_toEndOf="parent"
-app:layout_constraintStart_toStartOf="parent"
-app:layout_constraintTop_toBottomOf="@+id/textView2"
-tools:text="popularity" />
-<Button
-android:id="@+id/button_home_third"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:text="@string/previous"
-app:layout_constraintBottom_toBottomOf="parent"
-app:layout_constraintEnd_toEndOf="parent"
-app:layout_constraintHorizontal_bias="0.498"
-app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     </layout>

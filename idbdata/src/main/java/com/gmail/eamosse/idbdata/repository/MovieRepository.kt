@@ -1,13 +1,15 @@
 package com.gmail.eamosse.idbdata.repository
 
 import com.gmail.eamosse.idbdata.api.response.*
+
 import com.gmail.eamosse.idbdata.api.response.toCategory
 import com.gmail.eamosse.idbdata.api.response.toEntity
-import com.gmail.eamosse.idbdata.api.response.toMovies
 import com.gmail.eamosse.idbdata.api.response.toToken
+
 import com.gmail.eamosse.idbdata.data.Category
 import com.gmail.eamosse.idbdata.data.Movie
 import com.gmail.eamosse.idbdata.data.MoviesList
+
 import com.gmail.eamosse.idbdata.data.Token
 import com.gmail.eamosse.idbdata.datasources.LocalDataSource
 import com.gmail.eamosse.idbdata.datasources.OnlineDataSource
@@ -43,8 +45,6 @@ class MovieRepository : KoinComponent {
     suspend fun getCategories(): Result<List<Category>> {
         return when(val result = online.getCategories()) {
             is Result.Succes -> {
-                // On utilise la fonction map pour convertir les catégories de la réponse serveur
-                // en liste de categories d'objets de l'application
                 val categories = result.data.map {
                     it.toCategory()
                 }
@@ -54,11 +54,9 @@ class MovieRepository : KoinComponent {
         }
     }
     /*Libre getMoviesList*/
-    suspend fun getMoviesList(id:Int): Result<List<MoviesList>> {
-        return when(val result = online.getMoviesLists(id)) {
+    suspend fun getListMovie(categoryId :String): Result<List<MoviesList>> {
+        return when(val result = online.getListMovie(categoryId)) {
             is Result.Succes -> {
-                // On utilise la fonction map pour convertir les catégories de la réponse serveur
-                // en liste de categories d'objets de l'application
                 val movies = result.data.map {
                     it.toMovies()
                 }
@@ -67,16 +65,11 @@ class MovieRepository : KoinComponent {
             is Result.Error -> result
         }
     }
-    suspend fun getMovie(id:Int): Result<Movie> {
-        return when(val result = online.getMovie(id)) {
+    suspend fun getMovie(Id :Int): Result<Movie> {
+        return when (val result = online.getMovie(Id)) {
             is Result.Succes -> {
-                // On utilise la fonction map pour convertir les catégories de la réponse serveur
-                // en liste de categories d'objets de l'application
-                val movie = result.data.toMovie()
-                /* val productionCompanies = result.data.production_companies.map {
-                     movie.productionCompanies = it.toProductionCompanies()
-                 }*/
-                Result.Succes(movie)
+                val result = result.data.toMovie()
+                Result.Succes(result)
             }
             is Result.Error -> result
         }
