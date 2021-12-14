@@ -14,34 +14,47 @@
         tools:context=".ui.home.HomeThirdFragment">
 
         <TextView
-            app2:layout_constraintEnd_toEndOf="parent"
-            app2:layout_constraintStart_toStartOf="parent"
             android:id="@+id/movie_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:layout_height="150dp"
+            android:layout_marginBottom="92dp"
             android:text="Name :@{item.name}"
-            tools:ignore="MissingConstraints"
-            android:layout_marginTop="10dp"/>
+            android:textSize="18dp"
+            app2:layout_constraintBottom_toBottomOf="parent"
+            app2:layout_constraintEnd_toEndOf="parent"
+            app2:layout_constraintHorizontal_bias="0.496"
+            app2:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/movie_name"
-            app:layout_constraintTop_toBottomOf="@+id/movie_description"
-            tools:ignore="MissingConstraints"
-            tools:text="Name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginEnd="16dp"
+            android:padding="20dp"
+            android:textSize="28dp"
+            app2:layout_constraintBottom_toBottomOf="parent"
+            app2:layout_constraintEnd_toEndOf="parent"
+            app2:layout_constraintHorizontal_bias="0.528"
+            app2:layout_constraintStart_toStartOf="parent"
+            app2:layout_constraintTop_toTopOf="parent"
+            app2:layout_constraintVertical_bias="0.081"
+            app:layout_constraintTop_toBottomOf="@+id/movie_description"
+            tools:ignore="MissingConstraints"
+            tools:text="Name" />
 
         <ImageView
             android:id="@+id/movie_poster_path"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="191dp"
+            android:layout_height="170dp"
+            android:layout_marginBottom="300dp"
             android:src="@drawable/ic_launcher_background"
+            app2:layout_constraintBottom_toBottomOf="parent"
+            app2:layout_constraintEnd_toEndOf="parent"
+            app2:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/movie_name"
-            tools:ignore="MissingConstraints"
-            android:layout_marginTop="10dp"
-            />
+            tools:ignore="MissingConstraints" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-    </layout>
+</layout>
