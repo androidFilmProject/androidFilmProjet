@@ -6,14 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".ui.notifications.NotificationsFragment">
 
+
     <ImageView
         android:id="@+id/ImgGaston"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="88dp"
         android:src="@mipmap/ic_gaston_round"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.418" />
 
     <TextView
         android:id="@+id/Gaston"
@@ -22,23 +25,24 @@
         android:layout_marginStart="24dp"
         android:maxWidth="250dp"
         android:maxLines="1"
-        android:textStyle="bold"
-        android:text="LANGATE OTTO gaston Edwin"
+        android:text="LANGATE Gaston"
         android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/ImgGaston"
         app:layout_constraintStart_toEndOf="@+id/ImgGaston"
+        app:layout_constraintTop_toTopOf="@+id/ImgGaston"
+        app:layout_constraintVertical_bias="0.487"
         tools:text="Mon voisin" />
+
     <ImageView
         android:id="@+id/ImgZakaria"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="24dp"
         android:src="@mipmap/ic_zakaria_round"
-        app:layout_constraintBottom_toBottomOf="@id/Gaston"
-        app:layout_constraintStart_toStartOf="@id/Gaston"
-        app:layout_constraintTop_toTopOf="@id/Gaston" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/Zakaria"
@@ -47,26 +51,24 @@
         android:layout_marginStart="24dp"
         android:maxWidth="250dp"
         android:maxLines="1"
+        android:text="Zakaria Dridi"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/ImgZakaria"
         app:layout_constraintStart_toEndOf="@+id/ImgZakaria"
         app:layout_constraintTop_toTopOf="@+id/ImgZakaria"
-        tools:text="Mon voisin"
-        android:text="Zakaria Dridi"/>
-
+        app:layout_constraintVertical_bias="0.487"
+        tools:text="Mon voisin" />
 
     <ImageView
         android:id="@+id/ImgOmar"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginBottom="120dp"
         android:src="@mipmap/ic_omar_round"
-        app:layout_constraintBottom_toBottomOf="@id/Zakaria"
-        app:layout_constraintStart_toStartOf="@id/Zakaria"
-        app:layout_constraintTop_toTopOf="@id/Zakaria" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/Omar"

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Flix</string>
     <string name="next">Next</string>
     <string name="hello_home_second">Hello HomeSecondFragment. Arg: %1$s</string>
     <string name="hello_home_third">Hello HomeThirdFragment. Arg: %1$s</string>
